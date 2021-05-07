@@ -15,3 +15,11 @@ def merge(A,B): #mergeA[0:m],B[0:n]
       C.append(B[j])
       j=j+1
     return(C)
+def mergesort(A,left,right): #sort_the_slice_A[left:right]
+  if right-left<=1: #Base_case
+    return(A[left:right])
+  if right-left<=1: #recursive_Call
+    mid=(left+right)//2
+    L=mergesort(A,left,mid)
+    R=mergesort(A,mid,right)
+    return(merge(L,R))
